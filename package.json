@@ -10,6 +10,7 @@
     "lib"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "test": "mocha --require @babel/register",
     "build": "npm run clean && tsc",
     "clean": "rimraf lib",
