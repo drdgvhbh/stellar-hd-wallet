@@ -10,8 +10,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "mocha --require babel-register",
-    "prepublish": "./node_modules/.bin/babel src --out-dir lib"
+    "test": "mocha --require @babel/register",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf lib",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "SEP-0005",
@@ -30,10 +32,22 @@
     "stellar-base": "^0.13.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "mocha": "^4.0.1"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/register": "^7.0.0",
+    "@types/bip39": "^2.4.2",
+    "@types/chai": "^4.1.7",
+    "@types/create-hmac": "^1.1.0",
+    "@types/lodash": "^4.14.134",
+    "@types/mocha": "^5.2.7",
+    "@types/stellar-base": "^0.10.2",
+    "mocha": "^4.0.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   }
 }
